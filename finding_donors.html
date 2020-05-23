@@ -13855,6 +13855,33 @@ It is a ratio of true positives(words classified as spam, and which are actually
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<ol>
+<li>GaussianNB<ul>
+<li>document classification and spam filtering, real-time prediction, text-analysis, sentiment-analysis.</li>
+<li>This model fast in prediction, that's why we can use in real-time prediction.</li>
+<li>naive Bayes is known as a decent classifier, it is known to be a bad estimator, so the probability outputs from         predict_proba are not to be taken too seriously.</li>
+<li>because of easy to implement and fast prediction, we can get some idea about the problem with their prediction.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>SVM<ul>
+<li>classification of images for better accuracy, handwriting recognition, face detection.</li>
+<li>This is very powerful algorithm that not only aims to classify the data, but it also aims to find the best             possible boundary.</li>
+<li>Requires full labeling of input data</li>
+<li>After the simple GaussiaNB algo., we want model that gives the best boundary for future prediction.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>Ensembles<ul>
+<li>remote sansing( land-mapping,change detection ), malware detection, medicine</li>
+<li>we can combine multiple algorithms for better prediction.</li>
+<li>requires large computing power, with less data perform poorly</li>
+<li>combine the algorithms i have learned yet, let's how can i combine!!!!....</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div>
@@ -14096,6 +14123,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <li>In terms of f-score GaussianNB has the highest f-score, SVC and AdaBoostClassifier has </li>
 </ul>
 <p>GaussianNB has the highest f-score for the testing set when 100% of the training set is used.</p>
+<p>So, i would like to choose AdaBoostClassifier model, because it has good Accuracy, low training time, good F-score ....</p>
 
 </div>
 </div>
@@ -14117,7 +14145,13 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>The decision of choosing final model is confusing between AdaBoostClassifier and GaussianNB, one has higher accuracy while other has higher f-score.</p>
-<p>But i will choose model with higher accuracy, the AdaBoostClassifier. I am curious and so exiciting to work with the model combining and getting better prediction.</p>
+<p>But i will choose model with higher accuracy, the AdaBoostClassifier.</p>
+<p>I choose AdaBoostClassifier, because i am curious and so exiciting to work with the model combining and getting better prediction.</p>
+<p>In AdaBoostClassifier,
+    We fit our first learner in order to maximize the accuracy ( means minimize the errors ), so we remember this first     learner's model.
+    Then our second learner needs to fix on the error got by previous one.
+    We'll do it when accuracy didn't increase by next learner or upto some fixed times.
+    Then, we'll combine all learner's model and get the final the best one....</p>
 
 </div>
 </div>
