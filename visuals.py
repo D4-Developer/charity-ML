@@ -32,8 +32,9 @@ def distribution(data, transformed = False):
         ax.set_title("'%s' Feature Distribution"%(feature), fontsize = 14)
         ax.set_xlabel("Value")
         ax.set_ylabel("Number of Records")
-        ax.set_ylim((0, 2000))
-        ax.set_yticks([0, 500, 1000, 1500, 2000])
+        ax.set_ylim((0, 2000/3.4))
+        #3.4 should be passed....can get it from layer output index
+        ax.set_yticks([0, 500, 1000, 1500, 2000/3.4])
         ax.set_yticklabels([0, 500, 1000, 1500, ">2000"])
 
     # Plot aesthetics
@@ -74,8 +75,8 @@ def evaluate(results, accuracy, f1):
                 # Creative plot code
                 ax[j//3, j%3].bar(i+k*bar_width, results[learner][i][metric], width = bar_width, color = colors[k])
                 ax[j//3, j%3].set_xticks([0.45, 1.45, 2.45])
-                ax[j//3, j%3].set_xticklabels(["1%", "10%", "100%"])
-                ax[j//3, j%3].set_xlabel("Training Set Size")
+                ax[j//3, j%3].set_xticklabels(["1%", "20%", "40%","60%","%80%","100%"])
+                ax[j//3, j%3].set_xlabel("Testing Set Size(should be userDefined....)")
                 ax[j//3, j%3].set_xlim((-0.1, 3.0))
     
     # Add unique y-labels
@@ -137,7 +138,7 @@ def feature_plot(importances, X_train, y_train):
     pl.xlim((-0.5, 4.5))
     pl.ylabel("Weight", fontsize = 12)
     pl.xlabel("Feature", fontsize = 12)
-    
+    print("Showing final figure while last values are not still processing for further adding to loss calculation")
     pl.legend(loc = 'upper center')
     pl.tight_layout()
-    pl.show()  
+    pl.show()
